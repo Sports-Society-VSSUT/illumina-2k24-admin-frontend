@@ -9,7 +9,7 @@ const MedalList = () => {
 
     const fetchMedals = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/events/medal_data'); 
+        const response = await axios.get('https://illumina-backend.onrender.com/events/medal_data'); 
         setMedals(response.data);
       } catch (error) {
         console.error('Error fetching medal data', error);

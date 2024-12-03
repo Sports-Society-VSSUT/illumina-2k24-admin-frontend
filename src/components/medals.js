@@ -23,7 +23,7 @@ const MedalCount = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/events/medal_input",
+      const response = await axios.post("https://illumina-backend.onrender.com/events/medal_input",
       {
         groupName,
         goldCount,

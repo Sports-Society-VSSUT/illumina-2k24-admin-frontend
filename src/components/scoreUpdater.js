@@ -11,7 +11,7 @@ const ScoreUpdater = () => {
 
   const handleDeleteData = async () => {
     try {
-      const response = await axios.delete('http://localhost:5000/deleteStoredData');
+      const response = await axios.delete('https://illumina-backend.onrender.com/deleteStoredData');
       setDeleteStatus(response.data);
     } catch (error) {
       console.error('Error deleting stored data:', error);
@@ -20,7 +20,7 @@ const ScoreUpdater = () => {
   };
 
   const updateScores = () => {
-    const socket = io('http://localhost:5000');
+    const socket = io('https://illumina-backend.onrender.com');
     const updatedScores = { teamA: inputScores.teamA, teamB: inputScores.teamB };
     const teams = { t1: teamA, t2: teamB };
     socket.emit('updateScore', { gameId, scores: updatedScores, teams });
@@ -56,6 +56,7 @@ const ScoreUpdater = () => {
             <option value="cricket">Cricket</option>
             <option value="khokho">Kho Kho</option>
             <option value="kabbadi">Kabbadi</option>
+            <option value="badminton">Badminton</option>
             {/* Add more options as needed */}
           </select>
         </label>
